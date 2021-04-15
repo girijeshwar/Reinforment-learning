@@ -15,10 +15,6 @@ class Direction(Enum):
     UP=3
     DOWN=4
 
-#reset function
-#reward
-#play function
-#is collison 
 
 Point= namedtuple("Point","x, y")
 WHITE = (255,255,255)
@@ -70,16 +66,7 @@ class SnakeGamesAI:
             if event.type ==pygame.QUIT:
                 pygame.quit()
                 quit()
-            # if event.type ==pygame.KEYDOWN:
-            #     if event.key == pygame.K_LEFT:
-            #         self.direction= Direction.LEFT
-            #     elif event.key == pygame.K_RIGHT:
-            #         self.direction= Direction.RIGHT
-            #     elif event.key == pygame.K_UP:
-            #         self.direction= Direction.UP
-            #     elif event.key == pygame.K_DOWN:
-            #         self.direction= Direction.DOWN
-
+           
 
         self._move(action)
         self.snake.insert(0, self.head)
@@ -160,19 +147,3 @@ class SnakeGamesAI:
         
         
         self.head= Point(x, y)
-
-
-# if __name__=="__main__":
-#     game= SnakeGames()
-
-#     while True:
-#         game_over, score = game.play_step()
-
-#         if game_over ==True:
-#             break
-
-#     print("Final score:", score)
-
-
-
-#     pygame.quit()
